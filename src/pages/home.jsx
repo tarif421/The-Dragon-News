@@ -1,10 +1,11 @@
 import React from 'react';
+import NewsCard from '../Components/NewsCard';
+import { Navigate } from 'react-router';
 
 const home = () => {
     return (
-        <div>
-            home
-        </div>
+        <Navigate to="/category/2
+        "></Navigate>
     );
 };
 
