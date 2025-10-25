@@ -1,9 +1,11 @@
 import { FaEye, FaStar } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { BiBookmark } from "react-icons/bi";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     rating,
     total_view,
@@ -38,7 +40,11 @@ const NewsCard = ({ news }) => {
 
       {/* Thumbnail */}
       <figure>
-        <img src={thumbnail_url} alt={title} className="w-full h-60 object-cover" />
+        <img
+          src={thumbnail_url}
+          alt={title}
+          className="w-full h-60 object-cover"
+        />
       </figure>
 
       {/* Content */}
@@ -46,9 +52,12 @@ const NewsCard = ({ news }) => {
         <h2 className="card-title text-lg font-bold">{title}</h2>
         <p className="text-sm text-gray-600">
           {details.slice(0, 150)}...
-          <span className="text-primary font-semibold cursor-pointer">
+          <Link
+            to={`/news-details/${id}`}
+            className="text-primary font-semibold cursor-pointer"
+          >
             Read More
-          </span>
+          </Link>
         </p>
 
         {/* Tags */}
